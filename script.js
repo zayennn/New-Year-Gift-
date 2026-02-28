@@ -120,7 +120,7 @@ function init() {
     TweenMax.to(".hat", 1, {
       rotationZ: -80,
       x: -500,
-      opacity:0,
+      opacity: 0,
       ease: Power2.easeIn
     });
     TweenMax.to(".box", 1, {
@@ -130,10 +130,10 @@ function init() {
     TweenMax.to(".gift", 1, {
       opacity: 0,
       delay: 1,
-      onStart: function() {
+      onStart: function () {
         startScene();
       },
-      onComplete: function() {
+      onComplete: function () {
         document.querySelector(".gift").classList.add("hidden");
       }
     });
@@ -446,10 +446,10 @@ function init() {
       onComplete: startAnimations
     }).timeScale(1);
     appearance.staggerTo(letters, 3, {
-        scale: 1,
-        rotationZ: 0,
-        ease: Elastic.easeOut
-      }, 0.1)
+      scale: 1,
+      rotationZ: 0,
+      ease: Elastic.easeOut
+    }, 0.1)
       .to(houses.dom, 1, {
         scaleY: 1,
         ease: Elastic.easeOut
@@ -537,11 +537,12 @@ function init() {
     }
     e.stopPropagation();
     var id = this.getAttribute("id");
-    
-    TweenMax.to(svg, 2, {attr:{viewBox: viewBoxes[id].x + " " + viewBoxes[id].y + " " + viewBoxes[id].width + " " + viewBoxes[id].height},
+
+    TweenMax.to(svg, 2, {
+      attr: { viewBox: viewBoxes[id].x + " " + viewBoxes[id].y + " " + viewBoxes[id].width + " " + viewBoxes[id].height },
       ease: Power3.easeOut
     });
-    
+
     zoom = true;
     leaveOverlay(false, this);
     svg.style.cursor = "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/cross.png) 20 20, auto";
@@ -550,7 +551,7 @@ function init() {
   function unZoom() {
     zoom = false;
     svg.style.cursor = "auto";
-     TweenMax.to(svg, 2, {attr:{viewBox:"0 0 1600 900"}, ease: Power3.easeOut});
+    TweenMax.to(svg, 2, { attr: { viewBox: "0 0 1600 900" }, ease: Power3.easeOut });
   }
 
   var overlays = svg.querySelectorAll("#overlays > g");
@@ -573,7 +574,7 @@ glass.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/glass-01.png";
 var cross = new Image()
 cross.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/cross.png";
 
-          
-window.onload = function() {
+
+window.onload = function () {
   init();
 };
